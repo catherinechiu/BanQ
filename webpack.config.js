@@ -10,7 +10,6 @@ module.exports = {
   module: {
     rules: [
       {
-        // test: /\.(js|jsx)$/,
         test: /\.pug?/,
         exclude: /node_modules/,
         use: {
