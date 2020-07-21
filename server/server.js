@@ -43,8 +43,8 @@ const path = require('path');
 
 
 // Load View Engine
-app.set('views', path.join(__dirname, '../client/', 'views'));
-app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, '../client/', 'views'));
+// app.set('view engine', 'pug');
 
 // // parse req.body
 // app.use(bodyParser.urlencoded({ extended: false }));
@@ -69,9 +69,16 @@ app.set('view engine', 'pug');
 
 
 // READ: Get Home Route
+
+app.use('/build', express.static(path.join(__dirname, '../build')));
+
 app.get('/', (req, res) => {
-  // serve index.html file
-  res.render('index');
+  // serve index.html on the route '/'
+  // send pug template
+  // res.render('index');
+  // send React app
+  res.sendFile(path.join(__dirname, '../index.html'));
+
 
 
   // Algorithm.find({}, (err, algorithmData) => {
