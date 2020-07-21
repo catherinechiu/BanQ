@@ -2,7 +2,7 @@
   "name": "solo",
   "version": "1.0.0",
   "description": "multi-user algorithm and solution bank",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "start": "nodemon index",
     "build": "webpack --mode production"
@@ -20,5 +20,8 @@
   "devDependencies": {
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
