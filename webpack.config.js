@@ -7,7 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js'
   },
-  mode: 'production',
+  mode: 'development',
   module: {
     rules: [
       {
@@ -29,5 +29,11 @@ module.exports = {
         }
       }
     ]
+  },
+  devServer: {
+    publicPath: "http://localhost:8080/build/",
+    proxy: {
+      '/api': 'http://localhost:3000'
+    }
   }
 }
