@@ -1,0 +1,24 @@
+{
+  "name": "solo",
+  "version": "1.0.0",
+  "description": "multi-user algorithm and solution bank",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catherinechiu/solo.git"
+  },
+  "author": "Catherine Chiu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catherinechiu/solo/issues"
+  },
+  "homepage": "https://github.com/catherinechiu/solo#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
