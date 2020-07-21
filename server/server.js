@@ -6,8 +6,9 @@ const app = express();
 const PORT = 3000;
 
 
-// // import path module (included w/ node.js by default)
-// const path = require('path');
+// import path module (included w/ node.js by default)
+const path = require('path');
+
 // // import bodyParser
 // const bodyParser = require('body-parser');
 
@@ -41,9 +42,9 @@ const PORT = 3000;
 
 
 
-// // Load View Engine
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'pug');
+// Load View Engine
+app.set('views', path.join(__dirname, '../client/', 'views'));
+app.set('view engine', 'pug');
 
 // // parse req.body
 // app.use(bodyParser.urlencoded({ extended: false }));
@@ -53,21 +54,37 @@ const PORT = 3000;
 
 
 
-// // ROUTES
 
-// // READ: Get Home Route
-// app.get('/', (req, res) => {
-//   Algorithm.find({}, (err, algorithmData) => {
-//     if (err) {
-//       console.log('ERROR', err);
-//     } else {
-//       res.render('index', {
-//         title: 'Algorithms',
-//         algorithms: algorithmData,
-//       });
-//     };
+// ROUTES
+
+// // statically serve everything in the build folder on the route '/build
+// if (process.env.NODE_ENV === 'production') {
+//   app.use('/build', express.static(path.join(__dirname, '../build')));
+
+//   // serve index.html on the route '/'
+//   app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../index.html'));
 //   });
-// });
+// }
+
+
+// READ: Get Home Route
+app.get('/', (req, res) => {
+  // serve index.html file
+  res.render('index');
+
+
+  // Algorithm.find({}, (err, algorithmData) => {
+  //   if (err) {
+  //     console.log('ERROR', err);
+  //   } else {
+  //     res.render('index', {
+  //       title: 'Algorithms',
+  //       algorithms: algorithmData,
+  //     });
+  //   };
+  // });
+});
 
 // // CREATE: POST Algo Prompt Route
 // app.post('/', (req, res) => {

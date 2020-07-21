@@ -1,0 +1,35 @@
+h1 Hello World
+
+//- extends layout 
+
+//- block content
+//-   h1 #{title}
+//-   br
+//-   form(method='POST', action='/')
+//-     #form-group
+//-       label Title:
+//-       input.form-control(name='title', type='text')
+//-     #form-group
+//-       label Author:
+//-       input.form-control(name='author', type='text')
+//-     #form-group
+//-       label Body:
+//-       textarea.form-control(name='body')
+//-     #form-group
+//-       label Difficulty:
+//-       textarea.form-control(name='difficulty', type='text')
+//-     #form-group
+//-       label Tests:
+//-       textarea.form-control(name='tests')
+//-     #form-group
+//-       label Tags:
+//-       textarea.form-control(name='tags', type='text')
+//-     br
+//-     input.btn.btn-primary(type='submit', value='Add Algo')
+//-     br
+//-     br
+//-   hr
+//-   ul
+//-     each algorithm, i in algorithms
+//-       li.list-group-item
+//-         a(href='/algorithm/edit/'+algorithm._id)= algorithm.title

@@ -1,0 +1,58 @@
+extends layout 
+
+
+block content
+  h1 #{title}
+  form(method='POST', action='/algorithms/add')
+    #form-group
+      label Title:
+      input.form-control(name='title', type='text')
+    #form-group
+      label Author:
+      input.form-control(name='author', type='text')
+    #form-group
+      label Body:
+      textarea.form-control(name='body')
+    #form-group
+      label Difficulty:
+      textarea.form-control(name='difficulty', type='text')
+    #form-group
+      label Tests:
+      textarea.form-control(name='tests')
+    #form-group
+      label tags:
+      textarea.form-control(name='tags', type='text')
+    input.btn.btn-primary(type='submit', value='Submit')
+
+
+
+
+
+
+  //- title: {
+  //-   type: String,
+  //-   required: true,
+  //- },
+  //- author: {
+  //-   type: String,
+  //-   required: true,
+  //- },
+  //- likes: {
+  //-   type: Number,
+  //-   required: false,
+  //- },
+  //- body: {
+  //-   type: String,
+  //-   required: true,
+  //- },
+  //- difficulty: {
+  //-   type: String,
+  //-   required: true,
+  //- },
+  //- tests: {
+  //-   type: Array,
+  //-   required: true,
+  //- },
+  //- tags: {
+  //-   type: Array,
+  //-   required: false,

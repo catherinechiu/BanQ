@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= algorithm.title
+  h5 Submitted by #{author}
+  p #[strong Difficulty:] #{algorithm.difficulty}
+  p #[strong Likes:]  #{algorithm.likes} &hearts;'s
+  p #[strong Tags:]  #{algorithm.tags}
+  hr
+  p= algorithm.body
+  p #[strong Tests:]  #{algorithm.tests}
+  br
+  a.btn.btn-default(href='../algorithm/edit/'+algorithm._id) Edit

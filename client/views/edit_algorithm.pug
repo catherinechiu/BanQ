@@ -1,0 +1,34 @@
+extends layout 
+
+block content
+  h1 #{title}
+  p Edit the algorithm here...
+  br
+  form(method='POST', action='/algorithm/edit/'+algorithm._id)
+    #form-group
+      label Title:
+      input.form-control(name='title', type='text', value=algorithm.title)
+    #form-group
+      label Author:
+      input.form-control(name='author', type='text', value=algorithm.author)
+    #form-group
+      label Body:
+      textarea.form-control(name='body')= algorithm.body
+    #form-group
+      label Difficulty:
+      textarea.form-control(name='difficulty', type='text')= algorithm.difficulty
+    #form-group
+      label Tests:
+      textarea.form-control(name='tests')= algorithm.tests
+    #form-group
+      label Tags:
+      textarea.form-control(name='tags', type='text')= algorithm.tags
+    br
+    input.btn.btn-primary(type='submit', value='Save Changes')
+    br
+    br
+    // cannot use delete with form
+    // must use ajax to delete to keep database secure
+    // pt 7 13:00
+    // replace this delete button when you're done building front end
+    a.btn.btn-danger.delete-algorithm(href='#', data-id=algorithm._id) Delete Algo
