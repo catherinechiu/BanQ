@@ -35,6 +35,7 @@ module.exports = {
     proxy: {
       '/': 'http://localhost:3000'
     },
+    // enables hot module reloading
     watchContentBase: true
   },
 }

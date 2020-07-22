@@ -4,36 +4,22 @@ import ReactDOM from "react-dom";
 
 import MainContainer from "../containers/MainContainer.jsx"
 
+
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      value: ""
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    const { value } = event.target;
-    this.setState(() => {
-      return {
-        value
-      };
-    });
-  }
-
   render() {
     return (
       <div>
         <h1>Algorithms</h1>
-        <span><button>Add</button></span>
+        <button>Add</button>
+        <br></br>
+        <br></br>
         <br></br>
         <MainContainer />
       </div>
     );
   }
 }
+
+export default App;
 
 render(<App />, document.querySelector('#root'));

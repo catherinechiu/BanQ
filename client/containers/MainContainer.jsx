@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { render } from 'react-dom';
 
 class MainContainer extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class MainContainer extends Component {
         </div>
       </div>
     )
-  }
-}
+  };
+};
 
 export default MainContainer;
