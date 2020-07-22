@@ -30,10 +30,14 @@ if (process.env.NODE_ENV === 'production') {
 
 // READ: Get Home Route
 // serve index.html on the route '/'
-app.get('/', promptController.getPrompts, (req, res, next) => {
+app.get('/', (req, res, next) => {
   console.log('Received get request to home route.');
-  res.status(200).json(res.locals.algorithms)
+  res.status(200).sendFile(path.join(__dirname, '../index.html'))
 });
+
+app.get('/prompts', promptController.getPrompts, (req, res, next) => {
+  res.status(200).json(res.locals.algorithms);
+})
 
 // CREATE: POST Algo Prompt Route
 app.post('/', promptController.postPrompt, (req, res, next) => {

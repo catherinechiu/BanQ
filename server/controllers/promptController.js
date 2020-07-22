@@ -18,8 +18,6 @@ promptController.getPrompts = (req, res, next) => {
       });
     } else {
       res.locals.algorithms = algorithmData;
-      // console.log('res.locals', res.locals);
-      res.sendFile(path.join(__dirname, '../../index.html'));
       return next();
     };
   });
@@ -59,5 +57,16 @@ promptController.getSinglePrompt = (req, res, next) => {
   });
 };
 
+// promptController.editSinglePrompt = (req, res, next) => {
+//   const algorithmId = req.params.id;
+//   Algorithm.findById(algorithmId, (err, algorithmData) => {
+//     console.log('found ID:', req.params.id);
+//     // // render view file, then pass payload so view can dynamically render using declared variables
+//     // res.render('edit_algorithm', {
+//     //   title: algorithmData.title,
+//     //   algorithm: algorithmData,
+//     // });
+//   });
+// };
 
 module.exports = promptController;

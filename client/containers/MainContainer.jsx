@@ -12,7 +12,7 @@ class MainContainer extends Component {
 
   render() {
     return (
-      <div className="main-container">
+      <div >
         <h1>Main Container</h1>
         <h1>Algorithms</h1>
         <button>Add</button>

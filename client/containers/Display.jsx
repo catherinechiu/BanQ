@@ -8,7 +8,7 @@ class Display extends Component {
 
   render() {
     return (
-      <div className="main-container">
+      <div>
         <div className="difficulty">
           <button>Warm-Up</button>
           <button>Intermediate</button>
