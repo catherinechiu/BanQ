@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
+
+import Display from "./Display.jsx"
+import Prompts from "./Prompts.jsx"
+
 class MainContainer extends Component {
   constructor(props) {
     super(props);
@@ -9,11 +13,14 @@ class MainContainer extends Component {
   render() {
     return (
       <div className="main-container">
-        <div className="difficulty">
-          <button>Warm-Up</button>
-          <button>Intermediate</button>
-          <button>Advanced</button>
-        </div>
+        <h1>Main Container</h1>
+        <h1>Algorithms</h1>
+        <button>Add</button>
+        <br></br>
+        <br></br>
+        <br></br>
+        <Display />
+        <Prompts />
       </div>
     )
   };
