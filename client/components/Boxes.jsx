@@ -2,22 +2,19 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 
 const Boxes = (props) => {
-
-  // console.log("box props", props)
-
-  const { name } = props;
+  const { title, author } = props.info
+  console.log('author', author);
 
   const boxStyle = {
     border: 'solid black 1px',
-    display: 'flex',
-    // gridTemplateColumns: '280px 280px 280px',
+    width: '200px',
+    textAlign: 'center',
   }
 
   return (
-
-    < li className="boxes" style={boxStyle}>
-      <h4>POW</h4>
-    </li >
+    < div className="boxes" style={boxStyle}>
+      <h4>{title} </h4>
+    </div >
   );
 }
 

@@ -6,44 +6,35 @@ import Boxes from '../components/Boxes.jsx'
 class Prompts extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      fetchedPrompts: false,
-      prompts: [],
-    }
-
-  }
-
-  componentDidMount() {
-    fetch('http://localhost:8080/prompts')
-      .then(res => res.json())
-      .then((data) => {
-        if (!Array.isArray(data)) characters = [];
-        return this.setState({
-          prompts: data,
-          fetchedPrompts: true,
-        });
-      })
-      .catch(err => console.log('Prompts.componentDidMount: get prompts controller: ERROR: ', err));
   }
 
   render() {
-    console.log('prompts array: ', this.state.prompts[0]);
+    // deconstruct from props
+    const { prompts } = this.props;
     let boxes = [];
-    for (let i = 0; i < 3; i++) {
-      let algo = this.state.prompts[i]
-      console.log('info', algo);
+
+    for (let i = 0; i < prompts.length; i++) {
+      let info = prompts[i]
       boxes.push(<Boxes
         key={i}
         id={i}
-        title={this.state.prompts.title}
+        info={info}
       />)
     }
+
+    const containerStyle = {
+      // border: 'solid black 1px',
+      display: 'flex',
+      // gridTemplateColumns: '1 fr 1 fr 1 fr'
+      // gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    }
+
     return (
       <div className="main-container">
         <div className="prompts">
-          <h1>Prompts</h1>
+          <h1 style={containerStyle} >Prompts</h1>
+          {boxes}
         </div>
-        {boxes}
       </div>
     )
   };
