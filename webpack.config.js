@@ -33,7 +33,8 @@ module.exports = {
   devServer: {
     publicPath: "http://localhost:8080/build/",
     proxy: {
-      '/api': 'http://localhost:3000'
-    }
-  }
+      '/': 'http://localhost:3000'
+    },
+    watchContentBase: true
+  },
 }

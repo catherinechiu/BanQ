@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import { render } from 'react-dom';
 import ReactDOM from "react-dom";
+
+import MainContainer from "../containers/MainContainer.jsx"
 
 class App extends Component {
   constructor() {
@@ -23,18 +26,14 @@ class App extends Component {
 
   render() {
     return (
-      <form>
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-      </form>
+      <div>
+        <h1>Algorithms</h1>
+        <span><button>Add</button></span>
+        <br></br>
+        <MainContainer />
+      </div>
     );
   }
 }
 
-export default App;
-
-// const wrapper = document.getElementById("container");
-// wrapper ? ReactDOM.render(<App />, wrapper) : false;
+render(<App />, document.querySelector('#root'));

@@ -9,35 +9,34 @@ const PORT = 3000;
 // import path module (included w/ node.js by default)
 const path = require('path');
 
-// // import bodyParser
-// const bodyParser = require('body-parser');
+// import bodyParser
+const bodyParser = require('body-parser');
 
 
-// // CONNECT DATABASE
-// // import mongoose library for mongoDB
-// const mongoose = require('mongoose');
-// // connect to corresponding db in mongodb 
-// // mongoose.connect('mongodb://localhost/nodekb');
-// mongoose.connect('mongodb://localhost/solo-project');
-// // define db
-// let db = mongoose.connection;
+// CONNECT DATABASE
+// import mongoose library for mongoDB
+const mongoose = require('mongoose');
+// connect to 'solo-project' db in mongodb 
+mongoose.connect('mongodb://localhost/solo-project');
+// define db
+let db = mongoose.connection;
 
-// // Check connection
-// db.once('open', () => {
-//   console.log('Connected to MongoDB');
-// });
+// Check connection
+db.once('open', () => {
+  console.log('Connected to MongoDB');
+});
 
-// // Check for DB errors
-// db.on('error', (err) => {
-//   console.log(err);
-// });
-
+// Check for DB errors 
+db.on('error', (err) => {
+  console.log(err);
+});
 
 
 
-// // Bring in Models
-// // let Article = require('./models/algorithm');
-// let Algorithm = require('./models/algorithm');
+
+// Bring in Models
+// let Article = require('./models/article');
+let Algorithm = require('../models/algorithm');
 // const algorithm = require('./models/algorithm');
 
 
@@ -46,9 +45,9 @@ const path = require('path');
 // app.set('views', path.join(__dirname, '../client/', 'views'));
 // app.set('view engine', 'pug');
 
-// // parse req.body
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
+// parse req.body
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 
 
@@ -57,30 +56,23 @@ const path = require('path');
 
 // ROUTES
 
-// statically serve everything in the build folder on the route '/build
+// Production Mode vs Development Mode: statically serve everything in the build folder on the route '/build
 if (process.env.NODE_ENV === 'production') {
   app.use('/build', express.static(path.join(__dirname, '../build')));
 
   // serve index.html on the route '/'
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'));
-  });
+  // app.get('/', (req, res) => {
+  //   res.sendFile(path.join(__dirname, '../index.html'));
+  // });
 }
 
 
 // READ: Get Home Route
 
-app.use('/build', express.static(path.join(__dirname, '../build')));
-
-app.get('/', (req, res) => {
-  // serve index.html on the route '/'
-  // send pug template
-  // res.render('index');
-  // send React app
-  res.sendFile(path.join(__dirname, '../index.html'));
 
 
-
+app.use('/', (req, res) => {
+  console.log('hello');
   // Algorithm.find({}, (err, algorithmData) => {
   //   if (err) {
   //     console.log('ERROR', err);
@@ -91,6 +83,12 @@ app.get('/', (req, res) => {
   //     });
   //   };
   // });
+
+  // serve index.html on the route '/'
+  // send pug template
+  // res.render('../client/views/index.pug');
+  // send React app
+  res.status(200).sendFile(path.join(__dirname, '../index.html'));
 });
 
 // // CREATE: POST Algo Prompt Route
@@ -193,7 +191,7 @@ app.get('/', (req, res) => {
 
 
 // Start Server
-app.listen(PORT, () => console.log(`Server started on port ${PORT}...`));
+app.listen(PORT, () => console.log(`Server listening on ${PORT}...`));
 
 
 
