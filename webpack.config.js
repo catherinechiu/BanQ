@@ -18,7 +18,6 @@ module.exports = {
         }
       },
       {
-        // test: /\.(js|jsx)$/,
         test: /\.jsx?/,
         exclude: /node_modules/,
         use: {
@@ -27,10 +26,16 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react'],
           }
         }
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader'],
       }
     ]
   },
   devServer: {
+    // contentBase: path.join(__dirname, '/client'),
     publicPath: "http://localhost:8080/build/",
     proxy: {
       '/': 'http://localhost:3000'

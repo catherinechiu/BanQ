@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 
 import Display from "./Display.jsx"
 import Prompts from "./Prompts.jsx"
+import Modal from "../components/Modal.jsx"
 
 class MainContainer extends Component {
   constructor(props) {
@@ -14,6 +15,8 @@ class MainContainer extends Component {
       openModal: false,
     }
     this.addPrompt = this.addPrompt.bind(this)
+    // this.openModal = this.openModal.bind(this)
+    // this.closeModal = this.closeModal.bind(this)
   }
 
   componentDidMount() {
@@ -30,11 +33,13 @@ class MainContainer extends Component {
   }
 
   // openModal() {
+  //   console.log('open modal clicked');
   //   this.setState({ openModal: true })
   // }
 
   // closeModal() {
-  //   this.setState({ openModal: false})
+  //   console.log('close modal clicked');
+  //   this.setState({ openModal: false })
   // }
 
   // drill down props to boxes
@@ -42,7 +47,10 @@ class MainContainer extends Component {
   // when re-render of box is triggered, prompt will get most updated state with new object, prop drill, then children will get updated 
   addPrompt() {
     console.log('i was clicked');
+    // copy current prompts array in state 
     let prompts = this.state.prompts.slice();
+
+    // fetch request to post route on server to add prompt 
     const newBox = {
       title: 'new title',
       author: 'new author',
@@ -54,19 +62,25 @@ class MainContainer extends Component {
     }
 
     prompts.push(newBox)
-    // fetch request to post route on server to add prompt 
 
     // re renders components 
     return this.setState({ prompts });
   }
 
+  // TODO: connect add prompt to modal button!!
+
   render() {
     const { prompts, boxes } = this.state;
 
     return (
-      <div >
+      <main >
         <h1>Algorithms</h1>
-        <button onClick={this.addPrompt}>Add</button>
+        {/* <Modal open={this.state.open} handleClose={this.closeModal}>
+          <p>Modal</p>
+          <p>Data</p>
+        </Modal>
+        <button onClick={this.openModal}>Open Modal</button> */}
+        <button>Add</button>
         <br></br>
         <br></br>
         <br></br>
@@ -75,7 +89,7 @@ class MainContainer extends Component {
           boxes={boxes}
           prompts={prompts}
         />
-      </div>
+      </main>
     )
   };
 };
