@@ -22,17 +22,10 @@ class Prompts extends Component {
       />)
     }
 
-    const containerStyle = {
-      // border: 'solid black 1px',
-      display: 'flex',
-      // gridTemplateColumns: '1 fr 1 fr 1 fr'
-      // gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-    }
-
     return (
       <div className="main-container">
+        <h1>Prompts</h1>
         <div className="prompts">
-          <h1 style={containerStyle} >Prompts</h1>
           {boxes}
         </div>
       </div>

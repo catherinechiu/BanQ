@@ -8,12 +8,10 @@ class Display extends Component {
 
   render() {
     return (
-      <div>
-        <div className="difficulty">
-          <button>Warm-Up</button>
-          <button>Intermediate</button>
-          <button>Advanced</button>
-        </div>
+      <div className="difficulty">
+        <button>Warm-Up</button>
+        <button>Intermediate</button>
+        <button>Advanced</button>
       </div>
     )
   };

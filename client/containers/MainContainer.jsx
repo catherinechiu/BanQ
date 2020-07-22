@@ -74,16 +74,15 @@ class MainContainer extends Component {
 
     return (
       <main >
-        <h1>Algorithms</h1>
-        {/* <Modal open={this.state.open} handleClose={this.closeModal}>
+        <div className="header">
+          <h1>Algorithms</h1>
+          {/* <Modal open={this.state.open} handleClose={this.closeModal}>
           <p>Modal</p>
           <p>Data</p>
         </Modal>
         <button onClick={this.openModal}>Open Modal</button> */}
-        <button>Add</button>
-        <br></br>
-        <br></br>
-        <br></br>
+          <button onClick={this.addPrompt}>+</button>
+        </div>
         <Display />
         <Prompts
           boxes={boxes}

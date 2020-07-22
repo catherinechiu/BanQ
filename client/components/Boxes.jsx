@@ -5,13 +5,11 @@ const Boxes = (props) => {
   const { title, author } = props.info
 
   const boxStyle = {
-    border: 'solid black 1px',
-    width: '200px',
-    textAlign: 'center',
+    // border: 'solid whitesmoke 1px',
   }
 
   return (
-    < div className="boxes" style={boxStyle}>
+    < div className="box" style={boxStyle}>
       <h4>{title} </h4>
     </div >
   );
