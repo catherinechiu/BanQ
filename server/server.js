@@ -13,118 +13,38 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 
-// CONNECT DATABASE
-// import mongoose library for mongoDB
-const mongoose = require('mongoose');
-// connect to 'solo-project' db in mongodb 
-mongoose.connect('mongodb://localhost/solo-project');
-// define db
-let db = mongoose.connection;
-
-// Check connection
-db.once('open', () => {
-  console.log('Connected to MongoDB');
-});
-
-// Check for DB errors 
-db.on('error', (err) => {
-  console.log(err);
-});
-
-
-
-
-// Bring in Models
-// let Article = require('./models/article');
-let Algorithm = require('../models/algorithm');
-// const algorithm = require('./models/algorithm');
-
-
-
-// Load View Engine
-// app.set('views', path.join(__dirname, '../client/', 'views'));
-// app.set('view engine', 'pug');
+const promptController = require('./controllers/promptController');
 
 // parse req.body
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
 
-
-
-
-// ROUTES
-
 // Production Mode vs Development Mode: statically serve everything in the build folder on the route '/build
 if (process.env.NODE_ENV === 'production') {
   app.use('/build', express.static(path.join(__dirname, '../build')));
-
-  // serve index.html on the route '/'
-  // app.get('/', (req, res) => {
-  //   res.sendFile(path.join(__dirname, '../index.html'));
-  // });
 }
 
+// ROUTES
 
 // READ: Get Home Route
-
-
-
-app.use('/', (req, res) => {
-  console.log('hello');
-  // Algorithm.find({}, (err, algorithmData) => {
-  //   if (err) {
-  //     console.log('ERROR', err);
-  //   } else {
-  //     res.render('index', {
-  //       title: 'Algorithms',
-  //       algorithms: algorithmData,
-  //     });
-  //   };
-  // });
-
-  // serve index.html on the route '/'
-  // send pug template
-  // res.render('../client/views/index.pug');
-  // send React app
-  res.status(200).sendFile(path.join(__dirname, '../index.html'));
+// serve index.html on the route '/'
+app.get('/', promptController.getPrompts, (req, res, next) => {
+  console.log('Received get request to home route.');
+  res.status(200).json(res.locals.algorithms)
 });
 
-// // CREATE: POST Algo Prompt Route
-// app.post('/', (req, res) => {
-//   // deconstruct values from req.body
-//   const { title, author, body, difficulty, tests, tags } = req.body
-//   let algorithm = new Algorithm();
-//   algorithm.title = title;
-//   algorithm.author = author;
-//   algorithm.body = body;
-//   algorithm.difficulty = difficulty;
-//   algorithm.tests = tests;
-//   algorithm.tags = tags;
+// CREATE: POST Algo Prompt Route
+app.post('/', promptController.postPrompt, (req, res, next) => {
+  res.status(200).json('post request succeeded')
+});
 
 
-//   algorithm.save((err) => {
-//     if (err) {
-//       console.log(err);
-//       return;
-//     }
-//     else {
-//       console.log('Submitted to DB!');
-//       return;
-//     }
-//   });
-// });
-
-
-// // READ: GET Single Algorithm 
-// app.get('/algorithm/:id', (req, res) => {
-//   Algorithm.findById(req.params.id, (err, algorithmData) => {
-//     res.render('algorithm', {
-//       algorithm: algorithmData,
-//     });
-//   });
-// });
+// READ: GET Single Algorithm 
+app.get('/algorithm/:id', promptController.getSinglePrompt, (req, res, next) => {
+  res.status(200).json(res.locals.algorithm)
+});
 
 // // READ: GET Edit Form for Single Algorithm
 // app.get('/algorithm/edit/:id', (req, res) => {
@@ -187,7 +107,11 @@ app.use('/', (req, res) => {
 // // });
 
 
-
+// catch-all route handler for any requests to an unknown route
+app.use('*', (req, res) => {
+  console.log('Unknown route!')
+  res.sendStatus(404)
+});
 
 
 // Start Server
@@ -197,3 +121,5 @@ app.listen(PORT, () => console.log(`Server listening on ${PORT}...`));
 
 // // update algo
 // // delete algo 
+
+module.exports = app;

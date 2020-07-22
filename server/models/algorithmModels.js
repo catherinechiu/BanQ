@@ -39,12 +39,20 @@ db.algorithms.insert({
 /****** DATABASE SCRIPT CHEAT SHEET ******/
 
 
+
+
 // import mongoose (library for MongoDB)
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
+
+// connect to 'solo-project' db in mongodb 
+const MONGO_URI = 'mongodb://localhost/solo-project';
+mongoose.connect(MONGO_URI)
+  .then(() => console.log('Connected to Mongo DB.'))
+  .catch((err) => console.log(err));
 
 
 // Algorithm Collection Schema
-let algorithmSchema = mongoose.Schema({
+const algorithmSchema = mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -75,5 +83,7 @@ let algorithmSchema = mongoose.Schema({
   },
 });
 
-// store algorithms collection in variable
-let Algorithm = module.exports = mongoose.model('Algorithm', algorithmSchema);
+const Algorithm = mongoose.model('Algorithm', algorithmSchema);
+
+// exports all the models in an object to be used in the controller
+module.exports = { Algorithm };
