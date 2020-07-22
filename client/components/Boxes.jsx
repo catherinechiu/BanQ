@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 
 const Boxes = (props) => {
   const { title, author } = props.info
-  console.log('author', author);
 
   const boxStyle = {
     border: 'solid black 1px',

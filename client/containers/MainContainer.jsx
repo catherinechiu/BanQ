@@ -10,9 +10,10 @@ class MainContainer extends Component {
     super(props);
     this.state = {
       fetchedPrompts: false,
-      // boxes: [],
       prompts: [],
+      openModal: false,
     }
+    this.addPrompt = this.addPrompt.bind(this)
   }
 
   componentDidMount() {
@@ -28,14 +29,35 @@ class MainContainer extends Component {
       .catch(err => console.log('Prompts.componentDidMount: get prompts controller: ERROR: ', err));
   }
 
+  // openModal() {
+  //   this.setState({ openModal: true })
+  // }
+
+  // closeModal() {
+  //   this.setState({ openModal: false})
+  // }
 
   // drill down props to boxes
   // update database & state; then new object will be added to prompts array; set state will trigger re-render of main container & all its children
   // when re-render of box is triggered, prompt will get most updated state with new object, prop drill, then children will get updated 
   addPrompt() {
+    console.log('i was clicked');
+    let prompts = this.state.prompts.slice();
+    const newBox = {
+      title: 'new title',
+      author: 'new author',
+      likes: 7,
+      prompt: 'new prompt',
+      difficulty: 'advanced',
+      tests: ['tests'],
+      tags: ['tags'],
+    }
+
+    prompts.push(newBox)
     // fetch request to post route on server to add prompt 
-    // return this.setState();
+
     // re renders components 
+    return this.setState({ prompts });
   }
 
   render() {
