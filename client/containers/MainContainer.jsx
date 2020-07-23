@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
+// import ability to handle routers in React
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import PostAlgo from '../components/PostAlgo.jsx'
 
 import Display from "./Display.jsx"
 import Prompts from "./Prompts.jsx"
-import Modal from "../components/Modal.jsx"
+import Modal from '../components/Modal.jsx'
 
 class MainContainer extends Component {
   constructor(props) {
@@ -63,7 +67,7 @@ class MainContainer extends Component {
 
     prompts.push(newBox)
 
-    // re renders components 
+    // re-renders components 
     return this.setState({ prompts });
   }
 
@@ -72,16 +76,20 @@ class MainContainer extends Component {
   render() {
     const { prompts, boxes } = this.state;
 
+
     return (
       <main >
         <div className="header">
           <h1>Algorithms</h1>
+          <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to='/add'>
+            <button className="header-button">+</button>
+          </Link>
           {/* <Modal open={this.state.open} handleClose={this.closeModal}>
           <p>Modal</p>
           <p>Data</p>
         </Modal>
         <button onClick={this.openModal}>Open Modal</button> */}
-          <button onClick={this.addPrompt}>+</button>
+
         </div>
         <Display />
         <Prompts

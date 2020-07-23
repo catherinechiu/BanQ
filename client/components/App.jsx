@@ -2,15 +2,26 @@ import React, { Component } from "react";
 import { render } from 'react-dom';
 import ReactDOM from "react-dom";
 
+// import ability to handle routers in React
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+// import form to post algo 
+import PostAlgo from '../components/PostAlgo.jsx'
+
 import MainContainer from "../containers/MainContainer.jsx"
 
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <MainContainer />
-      </div>
+      <Router>
+        <div className="app">
+          <Switch>
+            <Route path='/' exact component={MainContainer} />
+            <Route path='/add' component={PostAlgo} />
+
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }

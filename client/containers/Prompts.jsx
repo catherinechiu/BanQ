@@ -24,7 +24,7 @@ class Prompts extends Component {
 
     return (
       <div className="main-container">
-        <h1>Prompts</h1>
+        {/* <h1>Prompts</h1> */}
         <div className="prompts">
           {boxes}
         </div>
