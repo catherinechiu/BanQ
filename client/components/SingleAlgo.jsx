@@ -25,30 +25,14 @@ class SingleAlgo extends Component {
         <p>Prompt: </p>
         <p>Tags: </p>
 
-        <label>
-          Title
-        </label>
-        <br></br>
+        <Link to='/'>
+          <button style={{ margin: '20px', color: 'inherit', textDecoration: 'none', backgroundColor: 'inherit', color: 'white', border: 'solid white 1px', padding: '10px', fontSize: '25px' }}
+          >Back</button>
+        </Link>
 
-        <label>
-          Submitted By
-        </label>
-        <br></br>
-
-        <label>
-          Difficulty
-        </label>
-        <br></br>
-
-        <label>
-          Prompt
-        </label>
-        <br></br>
-
-        <label>
-          Tags
-        </label>
-
+        <button
+          style={{ backgroundColor: 'inherit', color: 'white', border: 'solid white 1px', padding: '10px', fontSize: '25px' }}
+        >Delete</button>
       </div>
     );
   }

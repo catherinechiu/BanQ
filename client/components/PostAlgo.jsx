@@ -43,13 +43,10 @@ class PostAlgo extends Component {
         if (!Array.isArray(data)) {
           data = [];
         }
-        console.log('POST RESPONSE', data);
+        // console.log('POST RESPONSE', data);
         // this.props.update(data);
       })
       .catch((err) => console.log('error: ', err))
-
-
-    alert('A name was submitted: ' + this.state.title);
   }
 
 
@@ -91,13 +88,6 @@ class PostAlgo extends Component {
               Prompt
               <input id='' type='text' name="prompt" value={this.state.prompt} onChange={this.handleChange}></input>
             </label>
-            {/* <br></br>
-
-            <label>
-              Tags
-              <input id='' type='text' value={this.state.value} onChange={this.handleChange}></input>
-            </label>
-            <br></br> */}
 
             <br></br>
             <br></br>
@@ -105,11 +95,13 @@ class PostAlgo extends Component {
             <Link to='/'>
               <button style={{ color: 'inherit', textDecoration: 'inherit' }}> Back</button>
             </Link>
-            <input
-              className='submit-button'
-              type='submit' value='Submit'
-              onClick={(event) => this.onSubmit(event)}
-            ></input>
+            <Link to='/'>
+              <input
+                className='submit-button'
+                type='submit' value='Submit'
+                onClick={(event) => this.onSubmit(event)}
+              ></input>
+            </Link>
           </form>
         </div >
 

@@ -47,7 +47,7 @@ app.get('/prompts', promptController.getPrompts, (req, res, next) => {
 
 // CREATE: POST Algo Prompt Route
 app.post('/add', promptController.postPrompt, (req, res, next) => {
-  res.status(200).json({})
+  res.redirect(200, '/')
 });
 
 
