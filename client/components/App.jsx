@@ -7,11 +7,21 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 // import form to post algo 
 import PostAlgo from '../components/PostAlgo.jsx'
 import SingleAlgo from '../components/SingleAlgo.jsx'
-
 import MainContainer from "../containers/MainContainer.jsx"
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fetchedPrompts: false,
+      prompts: [],
+      openModal: false,
+    }
+  }
+
+
+
   render() {
     return (
 

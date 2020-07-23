@@ -19,9 +19,6 @@ class MainContainer extends Component {
       prompts: [],
       openModal: false,
     }
-    this.addPrompt = this.addPrompt.bind(this)
-    // this.openModal = this.openModal.bind(this)
-    // this.closeModal = this.closeModal.bind(this)
   }
 
   componentDidMount() {
@@ -37,61 +34,17 @@ class MainContainer extends Component {
       .catch(err => console.log('Prompts.componentDidMount: get prompts controller: ERROR: ', err));
   }
 
-  // openModal() {
-  //   console.log('open modal clicked');
-  //   this.setState({ openModal: true })
-  // }
-
-  // closeModal() {
-  //   console.log('close modal clicked');
-  //   this.setState({ openModal: false })
-  // }
-
-  // drill down props to boxes
-  // update database & state; then new object will be added to prompts array; set state will trigger re-render of main container & all its children
-  // when re-render of box is triggered, prompt will get most updated state with new object, prop drill, then children will get updated 
-  addPrompt() {
-    console.log('i was clicked');
-    // copy current prompts array in state 
-    let prompts = this.state.prompts.slice();
-
-    // fetch request to post route on server to add prompt 
-    const newBox = {
-      title: 'new title',
-      author: 'new author',
-      likes: 7,
-      prompt: 'new prompt',
-      difficulty: 'advanced',
-      tests: ['tests'],
-      tags: ['tags'],
-    }
-
-    prompts.push(newBox)
-
-    // re-renders components 
-    return this.setState({ prompts });
-  }
-
-  // TODO: connect add prompt to modal button!!
-
   render() {
     const { prompts, boxes } = this.state;
 
     return (
       <main >
 
-
-
         <div className="header">
           <h1>Algorithms</h1>
           <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to='/add'>
             <button className="header-button">+</button>
           </Link>
-          {/* <Modal open={this.state.open} handleClose={this.closeModal}>
-          <p>Modal</p>
-          <p>Data</p>
-        </Modal>
-        <button onClick={this.openModal}>Open Modal</button> */}
 
         </div>
         <Display />
@@ -99,6 +52,7 @@ class MainContainer extends Component {
           boxes={boxes}
           prompts={prompts}
         />
+
       </main>
     )
   };

@@ -34,7 +34,8 @@ class PostAlgo extends Component {
     fetch('/add/', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
       // stringify this.state (populated by input form) and place in request.body to send to server
       body: JSON.stringify(this.state)
@@ -44,10 +45,12 @@ class PostAlgo extends Component {
         if (!Array.isArray(data)) {
           data = [];
         }
-        // console.log('POST RESPONSE', data);
-        // this.props.update(data);
+        this.props.history.push("/");
       })
-      .catch((err) => console.log('error: ', err))
+      .catch((err) => {
+        console.log('error: ', err)
+        this.props.history.push("/");
+      })
   }
 
 
