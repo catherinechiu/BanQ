@@ -50,8 +50,6 @@ class PostAlgo extends Component {
   }
 
 
-
-
   render() {
 
     // const buttonStyle = {
