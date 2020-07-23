@@ -79,6 +79,9 @@ class MainContainer extends Component {
 
     return (
       <main >
+
+
+
         <div className="header">
           <h1>Algorithms</h1>
           <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to='/add'>

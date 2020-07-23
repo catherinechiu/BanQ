@@ -15,28 +15,43 @@ class SingleAlgo extends Component {
 
   render() {
 
-    // const buttonStyle = {
-    //   color: 'black'
-    // }
+    const algoStyle = {
+      // backgroundColor: 'blue',
+      marginTop: '20px 50px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'flex-start',
+      padding: '30px 100px'
+    }
 
     return (
-      <div className="single-algo">
-        <p>Title: </p>
-        <p>Submitted By: </p>
-        <p>Difficulty: </p>
-        <p>Prompt: </p>
-        <p>Tags: </p>
+      <div>
+        <h4 style={{ fontSize: '36px', marginTop: '30px', padding: '0' }}>Title</h4>
+        <div className="single-algo" style={algoStyle}>
+          <p>Submitted by: </p>
+          <p>Difficulty: </p>
+          <p>Prompt: </p>
+          {/* <p>Tags: </p> */}
+        </div>
+        <br></br>
+        <br></br>
 
-        <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' style={{ border: 'solid white 10px' }} />
+        </div>
+        <br></br>
+        <br></br>
+        <div>
+          <Link to='/'>
+            <button style={{ margin: '20px', color: 'inherit', textDecoration: 'none', backgroundColor: 'inherit', color: 'white', border: 'solid white 1px', padding: '10px', fontSize: '25px' }}
+            >Back</button>
+          </Link>
 
-        <Link to='/'>
-          <button style={{ margin: '20px', color: 'inherit', textDecoration: 'none', backgroundColor: 'inherit', color: 'white', border: 'solid white 1px', padding: '10px', fontSize: '25px' }}
-          >Back</button>
-        </Link>
-
-        <button
-          style={{ backgroundColor: 'inherit', color: 'white', border: 'solid white 1px', padding: '10px', fontSize: '25px' }}
-        >Delete</button>
+          <button
+            style={{ backgroundColor: 'inherit', color: 'white', border: 'solid white 1px', padding: '10px', fontSize: '25px' }}
+          >Delete</button>
+        </div>
       </div>
     );
   }

@@ -99,13 +99,15 @@ class PostAlgo extends Component {
             <Link to='/'>
               <button style={{ color: 'inherit', textDecoration: 'inherit' }}> Back</button>
             </Link>
-            <Link to='/'>
-              <input
-                className='submit-button'
-                type='submit' value='Submit'
-                onClick={(event) => this.onSubmit(event)}
-              ></input>
-            </Link>
+
+            {/* <Link to='/'> */}
+            <a href='/'><input
+              className='submit-button'
+              type='submit' value='Submit'
+              onClick={(event) => this.onSubmit(event)}
+            ></input></a>
+
+            {/* </Link> */}
           </form>
         </div >
 

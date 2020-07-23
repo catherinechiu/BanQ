@@ -14,12 +14,13 @@ import MainContainer from "../containers/MainContainer.jsx"
 class App extends Component {
   render() {
     return (
+
       <Router>
         <div className="app">
           <Switch>
             <Route path='/' exact component={MainContainer} />
             <Route path='/add' exact component={PostAlgo} />
-            <Route path='/algorithm' component={SingleAlgo} />
+            <Route path='/algorithm' render={(props) => <SingleAlgo {...props} title={this.props.title} />} />
 
           </Switch>
         </div>
