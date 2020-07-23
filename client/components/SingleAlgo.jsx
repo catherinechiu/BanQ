@@ -7,6 +7,7 @@ import ReactPlayer from 'react-player'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
+
 class SingleAlgo extends Component {
   constructor(props) {
     super(props);
