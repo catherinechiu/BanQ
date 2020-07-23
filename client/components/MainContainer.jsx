@@ -9,7 +9,6 @@ import SingleAlgo from '../components/SingleAlgo.jsx'
 
 import Display from "./Display.jsx"
 import Prompts from "./Prompts.jsx"
-import Modal from '../components/Modal.jsx'
 
 class MainContainer extends Component {
   constructor(props) {
@@ -17,7 +16,6 @@ class MainContainer extends Component {
     this.state = {
       fetchedPrompts: false,
       prompts: [],
-      openModal: false,
     }
   }
 
@@ -26,17 +24,31 @@ class MainContainer extends Component {
       .then(res => res.json())
       .then((data) => {
         if (!Array.isArray(data)) prompts = []
-        return this.setState({
-          prompts: data,
+        console.log('data', data);
+        console.log('HIII');
+
+
+        // call globalUpdate to update state in App from child MainContainer
+        this.props.updateGlobal({
           fetchedPrompts: true,
+          prompts: data,
+        })
+
+        console.log('Succeeded: ', data);
+        return this.setState({
+          fetchedPrompts: true,
+          prompts: data,
         });
+
       })
       .catch(err => console.log('Prompts.componentDidMount: get prompts controller: ERROR: ', err));
   }
 
+
+
   render() {
     const { prompts, boxes } = this.state;
-
+    console.log('hii');
     return (
       <main >
 
