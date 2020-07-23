@@ -24,35 +24,100 @@ class PostAlgo extends Component {
   }
 
   render() {
+
+    // const buttonStyle = {
+    //   color: 'black'
+    // }
+
     return (
-      < div className="PostAlgo">
+      <div className="post-algo">
+        <div>
+          <h1>Add Algo</h1>
+        </div>
 
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Title:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+        < div className="form-details">
+          <form method='POST' action='/add'>
+            <label>
+              Title
+              <input id='' type='text'></input>
+            </label>
             <br></br>
-            Author:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+
+            <label>
+              Submitted By
+              <input id='' type='text'></input>
+            </label>
             <br></br>
-            Likes:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+
+            <label>
+              Difficulty
+              <input id='' type='text'></input>
+            </label>
             <br></br>
-            Difficulty:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+
+            <label>
+              Prompt
+              <input id='' type='text'></input>
+            </label>
             <br></br>
-            Tags:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+
+            <label>
+              Tags
+              <input id='' type='text'></input>
+            </label>
             <br></br>
-          </label>
+
+            <br></br>
+            <br></br>
+
+            <Link to='/'>
+              <button style={{ color: 'inherit', textDecoration: 'inherit' }}> Back</button>
+            </Link>
+            <input className='submit-button' type='submit' value='Submit'></input>
+          </form>
+        </div >
 
 
-          <input type="submit" value="Submit" />
-        </form>
-      </div >
+      </div>
     );
   }
 }
 
 
 export default PostAlgo;
+
+
+
+// <form onSubmit={this.handleSubmit}>
+// <label>
+//   Title:
+//   <input type="text" value={this.state.value} onChange={this.handleChange} />
+// </label>
+// <label>
+//   <br></br>
+//   Submitted By:
+//   <input type="text" value={this.state.value} onChange={this.handleChange} />
+// </label>
+
+// <label>
+//   <br></br>
+//   Difficulty:
+//   <input type="text" value={this.state.value} onChange={this.handleChange} />
+// </label>
+
+// <label>
+//   <br></br>
+//   Prompt:
+//   <input type="text" value={this.state.value} onChange={this.handleChange} />
+// </label>
+
+// <label>
+//   <br></br>
+//   Tags:
+//   <input type="text" value={this.state.value} onChange={this.handleChange} />
+// </label>
+// <br></br>
+// <br></br>
+// <input className="add-button" type="submit" value="Submit" />
+// </form>
+// <button>Back</button>

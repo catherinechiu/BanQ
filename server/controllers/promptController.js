@@ -35,6 +35,7 @@ promptController.postPrompt = (req, res, next) => {
     tests: tests,
     tags: tags,
   })
+  console.log('post request succeeded');
   return next();
 }
 

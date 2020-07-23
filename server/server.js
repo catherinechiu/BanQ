@@ -35,13 +35,19 @@ app.get('/', (req, res, next) => {
   res.status(200).sendFile(path.join(__dirname, '../index.html'))
 });
 
+// app.get('/add', (req, res, next) => {
+//   console.log('Received get request to add route.');
+//   res.status(200).sendFile(path.join(__dirname, '../client/components/PostAlgo.jsx'))
+// });
+// 
+
 app.get('/prompts', promptController.getPrompts, (req, res, next) => {
   res.status(200).json(res.locals.algorithms);
 })
 
 // CREATE: POST Algo Prompt Route
-app.post('/', promptController.postPrompt, (req, res, next) => {
-  res.status(200).json('post request succeeded')
+app.post('/add', promptController.postPrompt, (req, res, next) => {
+  res.status(200)
 });
 
 

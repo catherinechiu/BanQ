@@ -35,12 +35,12 @@ module.exports = {
     ]
   },
   devServer: {
-    // contentBase: path.join(__dirname, '/client'),
     publicPath: "http://localhost:8080/build/",
     proxy: {
       '/': 'http://localhost:3000'
     },
     // enables hot module reloading
-    watchContentBase: true
+    watchContentBase: true,
+    historyApiFallback: true,
   },
 }
