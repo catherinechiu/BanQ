@@ -25,13 +25,14 @@ promptController.getPrompts = (req, res, next) => {
 
 promptController.postPrompt = (req, res, next) => {
   // deconstruct values from req.body
-  const { title, author, likes, prompt, difficulty, tests, tags } = req.body
+  const { title, author, likes, prompt, difficulty, tests, tags, url } = req.body
   Algorithm.create({
     title: title,
     author: author,
     // likes: likes,
     difficulty: difficulty,
     body: prompt,
+    url: url,
     // tests: tests,
     // tags: tags,
   })

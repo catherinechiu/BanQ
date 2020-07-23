@@ -13,6 +13,7 @@ class PostAlgo extends Component {
       author: '',
       difficulty: '',
       prompt: '',
+      url: '',
       // tags: [],
     };
 
@@ -28,7 +29,7 @@ class PostAlgo extends Component {
     event.preventDefault();
 
     // deconstruct form data out of state 
-    const { title, author, difficulty, prompt } = this.state;
+    const { title, author, difficulty, prompt, url } = this.state;
 
     fetch('/add/', {
       method: 'POST',
@@ -85,6 +86,11 @@ class PostAlgo extends Component {
             <label>
               Prompt
               <input id='' type='text' name="prompt" value={this.state.prompt} onChange={this.handleChange}></input>
+            </label>
+
+            <label>
+              URL (optional)
+              <input id='' type='text' name="url" value={this.state.url} onChange={this.handleChange}></input>
             </label>
 
             <br></br>

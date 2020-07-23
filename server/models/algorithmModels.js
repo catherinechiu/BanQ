@@ -73,6 +73,10 @@ const algorithmSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  url: {
+    type: String,
+    required: false,
+  }
   // tests: {
   //   type: Array,
   //   required: false,
