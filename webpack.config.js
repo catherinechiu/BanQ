@@ -5,7 +5,8 @@ module.exports = {
   entry: './client/index.jsx',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/' // for no 404 error with react router
   },
   mode: process.env.NODE_ENV,
   module: {
@@ -41,6 +42,6 @@ module.exports = {
     },
     // enables hot module reloading
     watchContentBase: true,
-    historyApiFallback: true,
+    historyApiFallback: true, // for no 404 error with react router
   },
 }

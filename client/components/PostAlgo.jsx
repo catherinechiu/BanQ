@@ -8,20 +8,52 @@ import { Link } from 'react-router-dom'
 class PostAlgo extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = {
+      title: '',
+      author: '',
+      difficulty: '',
+      prompt: '',
+      // tags: [],
+    };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ [event.target.name]: event.target.value });
   }
 
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+  onSubmit(event) {
     event.preventDefault();
+
+    // deconstruct form data out of state 
+    const { title, author, difficulty, prompt } = this.state;
+
+    fetch('/add/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      // stringify this.state (populated by input form) and place in request.body to send to server
+      body: JSON.stringify(this.state)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!Array.isArray(data)) {
+          data = [];
+        }
+        console.log('POST RESPONSE', data);
+        // this.props.update(data);
+      })
+      .catch((err) => console.log('error: ', err))
+
+
+    alert('A name was submitted: ' + this.state.title);
   }
+
+
+
 
   render() {
 
@@ -39,33 +71,33 @@ class PostAlgo extends Component {
           <form method='POST' action='/add'>
             <label>
               Title
-              <input id='' type='text'></input>
+              <input id='' type='text' name="title" value={this.state.title} onChange={this.handleChange}></input>
             </label>
             <br></br>
 
             <label>
               Submitted By
-              <input id='' type='text'></input>
+              <input id='' type='text' name="author" value={this.state.author} onChange={this.handleChange}></input>
             </label>
             <br></br>
 
             <label>
               Difficulty
-              <input id='' type='text'></input>
+              <input id='' type='text' name="difficulty" value={this.state.difficulty} onChange={this.handleChange}></input>
             </label>
             <br></br>
 
             <label>
               Prompt
-              <input id='' type='text'></input>
+              <input id='' type='text' name="prompt" value={this.state.prompt} onChange={this.handleChange}></input>
             </label>
-            <br></br>
+            {/* <br></br>
 
             <label>
               Tags
-              <input id='' type='text'></input>
+              <input id='' type='text' value={this.state.value} onChange={this.handleChange}></input>
             </label>
-            <br></br>
+            <br></br> */}
 
             <br></br>
             <br></br>
@@ -73,7 +105,11 @@ class PostAlgo extends Component {
             <Link to='/'>
               <button style={{ color: 'inherit', textDecoration: 'inherit' }}> Back</button>
             </Link>
-            <input className='submit-button' type='submit' value='Submit'></input>
+            <input
+              className='submit-button'
+              type='submit' value='Submit'
+              onClick={(event) => this.onSubmit(event)}
+            ></input>
           </form>
         </div >
 

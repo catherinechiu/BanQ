@@ -61,10 +61,10 @@ const algorithmSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  likes: {
-    type: Number,
-    required: false,
-  },
+  // likes: {
+  //   type: Number,
+  //   required: false,
+  // },
   body: {
     type: String,
     required: true,
@@ -73,14 +73,14 @@ const algorithmSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  tests: {
-    type: Array,
-    required: true,
-  },
-  tags: {
-    type: Array,
-    required: false,
-  },
+  // tests: {
+  //   type: Array,
+  //   required: false,
+  // },
+  // tags: {
+  //   type: Array,
+  //   required: false,
+  // },
 });
 
 const Algorithm = mongoose.model('Algorithm', algorithmSchema);

@@ -25,15 +25,15 @@ promptController.getPrompts = (req, res, next) => {
 
 promptController.postPrompt = (req, res, next) => {
   // deconstruct values from req.body
-  const { title, author, likes, body, difficulty, tests, tags } = req.body
+  const { title, author, likes, prompt, difficulty, tests, tags } = req.body
   Algorithm.create({
     title: title,
     author: author,
-    likes: likes,
-    body: body,
+    // likes: likes,
     difficulty: difficulty,
-    tests: tests,
-    tags: tags,
+    body: prompt,
+    // tests: tests,
+    // tags: tags,
   })
   console.log('post request succeeded');
   return next();

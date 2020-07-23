@@ -24,6 +24,31 @@ class SingleAlgo extends Component {
         <p>Difficulty: </p>
         <p>Prompt: </p>
         <p>Tags: </p>
+
+        <label>
+          Title
+        </label>
+        <br></br>
+
+        <label>
+          Submitted By
+        </label>
+        <br></br>
+
+        <label>
+          Difficulty
+        </label>
+        <br></br>
+
+        <label>
+          Prompt
+        </label>
+        <br></br>
+
+        <label>
+          Tags
+        </label>
+
       </div>
     );
   }

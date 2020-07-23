@@ -47,13 +47,13 @@ app.get('/prompts', promptController.getPrompts, (req, res, next) => {
 
 // CREATE: POST Algo Prompt Route
 app.post('/add', promptController.postPrompt, (req, res, next) => {
-  res.status(200)
+  res.status(200).json({})
 });
 
 
 // READ: GET Single Algorithm 
 app.get('/algorithm/:id', promptController.getSinglePrompt, (req, res, next) => {
-  res.status(200).json(res.locals.algorithm)
+  res.status(200)
 });
 
 // // READ: GET Edit Form for Single Algorithm
@@ -118,10 +118,19 @@ app.get('/algorithm/:id', promptController.getSinglePrompt, (req, res, next) => 
 
 
 // catch-all route handler for any requests to an unknown route
-app.use('*', (req, res) => {
-  console.log('Unknown route!')
-  res.sendStatus(404)
-});
+// app.use('*', (req, res) => {
+//   console.log('Unknown route!')
+//   res.sendStatus(404)
+// });
+
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../index.html'), function (err) { //for no 404 error w/ react router
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
 
 
 // Start Server

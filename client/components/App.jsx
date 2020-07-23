@@ -18,7 +18,7 @@ class App extends Component {
         <div className="app">
           <Switch>
             <Route path='/' exact component={MainContainer} />
-            <Route path='/add' component={PostAlgo} />
+            <Route path='/add' exact component={PostAlgo} />
             <Route path='/algorithm' component={SingleAlgo} />
 
           </Switch>

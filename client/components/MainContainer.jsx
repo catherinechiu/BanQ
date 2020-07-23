@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import PostAlgo from '../components/PostAlgo.jsx'
+import SingleAlgo from '../components/SingleAlgo.jsx'
 
 import Display from "./Display.jsx"
 import Prompts from "./Prompts.jsx"
@@ -76,7 +77,6 @@ class MainContainer extends Component {
   render() {
     const { prompts, boxes } = this.state;
 
-
     return (
       <main >
         <div className="header">
@@ -100,5 +100,7 @@ class MainContainer extends Component {
     )
   };
 };
+
+
 
 export default MainContainer;
