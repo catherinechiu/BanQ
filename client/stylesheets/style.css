@@ -236,11 +236,15 @@ form label {
 
 
 
-/* .single-algo {
-  border: solid pink 1px;
+.single-algo {
+  /* border: solid pink 1px; */
 
-  width: 500px;
-} */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
 
 
 .single-algo h4 {
@@ -249,7 +253,17 @@ form label {
   padding: 0;
 }
 
+.single-algo .info {
+  border: solid 1px pink;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  font-size: 20px;
+
+  width: 60%;
+}
 
 .player {
   display: flex;
@@ -268,6 +282,10 @@ form label {
 
   width: 150px;
   font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 /* .single-back {
