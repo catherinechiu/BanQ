@@ -234,18 +234,63 @@ form label {
 
 
 
+
+
 /* .single-algo {
-  border: solid green 1px;
-  margin-top: 20px 50p;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: '30px 100px';
+  border: solid pink 1px;
+
+  width: 500px;
 } */
 
 
+.single-algo h4 {
+  font-size: 36px;
+  margin-top: 30px;
+  padding: 0;
+}
 
+
+
+.player {
+  display: flex;
+  justify-content: center;
+}
+
+.single-algo button {
+  background-color: inherit;
+  color: inherit;
+  border: solid white 1px;
+  padding: 1%;  
+  font-size: 25px;
+  border-radius: 10px;
+  margin: 0 30px;
+
+
+  width: 150px;
+  font-weight: 600;
+}
+
+/* .single-back {
+  background-color: inherit;
+  color: inherit;
+  border: solid white 1px;
+  padding: 10px;  
+  font-size: 25px;
+  border-radius: 10px;
+
+  margin: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.delete {
+  background-color: inherit;
+  color: white;
+  border: solid white 1px;
+  padding: 10px;  
+  font-size: 25px;
+
+} */
 
 
 .footer {
