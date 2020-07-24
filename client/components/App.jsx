@@ -16,17 +16,10 @@ class App extends Component {
     this.state = {
       fetchedPrompts: false,
       prompts: [],
+      openModal: false,
     }
-    this.updateGlobal = this.updateGlobal.bind(this);
   }
 
-  updateGlobal(obj) {
-    this.setState(() => ({
-      fetchedPrompts: obj.fetchedPrompts,
-      prompts: obj.prompts,
-    }))
-    console.log('this.state', this.state);
-  }
 
 
   render() {
@@ -34,14 +27,15 @@ class App extends Component {
 
       <Router>
         <div className="app">
+          {/* <MainContainer /> */}
           <Switch>
-            <Route path='/' exact render={() => <MainContainer update={this.updateGlobal} />} />
+            <Route path='/' exact component={MainContainer} />
             <Route path='/add' exact component={PostAlgo} />
-            <Route path='/algorithm' render={() => <SingleAlgo update={this.updateGlobal} information={this.state} />} />
+            <Route path='/algorithm' render={(props) => <SingleAlgo {...props} title={this.props.title} />} />
+
           </Switch>
         </div>
       </Router>
-
     );
   }
 }

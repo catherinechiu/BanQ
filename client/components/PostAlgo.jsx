@@ -56,8 +56,13 @@ class PostAlgo extends Component {
 
   render() {
 
-    // const buttonStyle = {
-    //   color: 'black'
+    // const backStyle = {
+    //   padding: '20%',
+    //   width: '150px',
+    //   height: '40px',
+    //   // display: 'flex',
+    //   // alignItems: 'center',
+    //   // textDecoration: 'underline',
     // }
 
     return (
@@ -70,48 +75,43 @@ class PostAlgo extends Component {
           <form method='POST' action='/add'>
             <label>
               Title
-              <input id='' type='text' name="title" value={this.state.title} onChange={this.handleChange}></input>
+              <input type='text' name="title" value={this.state.title} onChange={this.handleChange}></input>
             </label>
-            <br></br>
 
             <label>
               Submitted By
-              <input id='' type='text' name="author" value={this.state.author} onChange={this.handleChange}></input>
+              <input type='text' name="author" value={this.state.author} onChange={this.handleChange}></input>
             </label>
-            <br></br>
 
             <label>
               Difficulty
-              <input id='' type='text' name="difficulty" value={this.state.difficulty} onChange={this.handleChange}></input>
+              <input type='text' name="difficulty" value={this.state.difficulty} onChange={this.handleChange}></input>
             </label>
-            <br></br>
 
             <label>
               Prompt
-              <input id='' type='text' name="prompt" value={this.state.prompt} onChange={this.handleChange}></input>
+              <input type='text' name="prompt" value={this.state.prompt} onChange={this.handleChange}></input>
             </label>
 
             <label>
               URL (optional)
-              <input id='' type='text' name="url" value={this.state.url} onChange={this.handleChange}></input>
+              <input type='text' name="url" value={this.state.url} onChange={this.handleChange}></input>
             </label>
 
-            <br></br>
-            <br></br>
+          </form>
 
-            <Link to='/'>
-              <button style={{ color: 'inherit', textDecoration: 'inherit' }}> Back</button>
+          <div className="buttons">
+            <Link className="back" to='/'>
+              <button  > Back</button>
             </Link>
 
-            {/* <Link to='/'> */}
             <a href='/'><input
               className='submit-button'
               type='submit' value='Submit'
               onClick={(event) => this.onSubmit(event)}
             ></input></a>
+          </div>
 
-            {/* </Link> */}
-          </form>
         </div >
 
 
@@ -122,6 +122,9 @@ class PostAlgo extends Component {
 
 
 export default PostAlgo;
+
+// styling for back buton
+// style={{ color: 'inherit', textDecoration: 'inherit' }}
 
 
 
