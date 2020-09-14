@@ -162,8 +162,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <a href="https://github.com/catherinechiu">Catherine Chiu</a>
 </div>
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name) -->
-
 
 
 <!-- ACKNOWLEDGEMENTS -->
