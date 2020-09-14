@@ -34,8 +34,6 @@
   <p align="center">
     An app to crowd-source algorithm solutions (both video explanations and code form).
     <br />
-    <a href="https://github.com/wellhaus/BanQ.git"><strong>Docs coming soon!</strong></a>
-    <br />
     <br />
     <a href="https://github.com/wellhaus/BanQ.git">Demo coming soon!</a>
     ·
@@ -120,7 +118,7 @@ npm start
 Demo GIFs coming soon.
 
 <div align="center">
-<img src="./client/assets/images/UI.png" width=300/> <br /><br /><p>Homepage</p>
+<img src="./client/assets/images/UI.png" width=600/> <br /><br /><p>Homepage</p>
 </div>
 
 
