@@ -1,51 +1,19 @@
-<!--
-*** Thanks for checking out this README Template. If you have a suggestion that would
-*** make this better, please fork the repo and create a pull request or simply open
-*** an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
--->
+<div align="center">
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-<!-- [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url] -->
+<img src="./client/assets/images/banq.png" height=300/>
 
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/catherinechiu/BanQ)
+![Release: 1.0](https://img.shields.io/badge/Release-1.0-red)
+![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)
+![Contributions Welcome](https://img.shields.io/badge/Contributions-welcome-blue.svg)
+[![Github stars](https://img.shields.io/github/stars/catherinechiu/BanQ?style=social)](https://github.com/catherinechiu/BanQ)
 
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <!-- <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a> -->
+<p><b>BanQ: </b>An app to crowd-source algorithm solutions in both video explanations and code form.</p>
 
-  <h3 align="center">BanQ</h3>
-
-  <p align="center">
-    An app to crowd-source algorithm solutions (both video explanations and code form).
-    <br />
-    <br />
-    <a href="https://github.com/wellhaus/BanQ.git">Demo coming soon!</a>
-    ·
-    <a href="https://github.com/wellhaus/BanQ.git/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/wellhaus/BanQ.git/issues">Request Feature</a>
-  </p>
-</p>
+</div>
 
 
-
-<!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 * [About the Project](#about-the-project)
@@ -61,13 +29,6 @@
 * [Acknowledgements](#acknowledgements)
 
 
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-
-Coming soon!
 
 ### Built With
 
@@ -85,14 +46,6 @@ Coming soon!
 ## Getting Started
 
 Coming soon!
-
-<!-- ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-``` -->
 
 ### Installation
 
@@ -115,26 +68,18 @@ npm start
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Demo GIFs coming soon.
-
 <div align="center">
-<img src="./client/assets/images/UI.png" width=600/> <br /><br /><p>Homepage</p>
+<img src="./client/assets/images/UI.png" width=600/> <br /><br /><p></p>
 </div>
 
 
 
-<!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
-
-
-
-<!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/wellhaus/BanQ.git/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/catherinechiu/BanQ/issues) for a list of proposed features (and known issues).
 
 
 
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -145,16 +90,9 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
-<!-- LICENSE -->
 ## License
-
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
-<!-- CONTACT -->
 ## Contact
 
 <div align="center">
@@ -163,30 +101,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 </div>
 
 
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-Coming soon!
-
-<!-- * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com) -->
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
